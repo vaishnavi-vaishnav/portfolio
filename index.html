@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<!-- Prevent zooming using the viewport meta tag (this is to be added in the HTML head) -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+  <title>Interactive Personal Page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="flip-clock.css">
+
+
+
+</head>
+<body>
+  <div class="main-container">
+    <div class="row justify-content-center gx-3 w-100 h-100">
+      <!-- Left Sidebar -->
+       <div class="col-1 d-flex flex-column gap-3 align-items-center">
+          <div class="top-bar">
+            <button id="hireMeBtn" class="hiremebtn">Hire Me</button>
+          </div>
+       </div>
+
+      <div class="col-2 d-flex flex-column gap-2 justify-content-between align-items-center iphone-cards">
+        <div class="card text-center p-3">
+          <h6>Hello!</h6>
+          <p class="mb-0">Your Name</p>
+          <small>Designation</small>
+        </div>
+        <div class="card text-center p-3">Connect with Me</div>
+        <div class="card text-center p-3" id="quoteBox">Click for Quote</div>
+        <div class="card text-center p-3">More</div>
+      </div>
+
+
+      <!-- iPhone Display -->
+      <div class="col-3 d-flex justify-content-center align-items-center flex-column">
+        <div class="iphone-container">
+          <!-- iPhone Mockup -->
+          <img id="phone-image" src="./assets/iphone.png" alt="Phone Mockup" class="iphone">
+          <!-- <div class="welcome text-center position-absolute">
+            <span class="">WELCOME</span><br>
+          </div> -->
+          
+          <!-- App Icons Grid inside Phone -->
+          <div class="app-grid d-flex flex-wrap justify-content-center align-items-center position-absolute" id="appGrid">
+            <div class="app-item" id="aboutme">
+                <div class="app-icon-circle" style="background-color:#9F1239 ;">
+                  <img src="./assets/App icons/info.png" alt="App Icon" class="icon">
+                </div>
+                <div class="app-label">About me</div>
+              </div>
+            
+              <div class="app-item">
+                <div class="app-icon-circle" style="background-color: #EA580B;">
+                  <img src="./assets/App icons/email.png" alt="App Icon" class="icon">
+                </div>
+                <div class="app-label">Email</div>
+              </div>
+              <div class="app-item">
+                <div class="app-icon-circle" style="background-color: #75E06D;">
+                  <img src="./assets/App icons/linktree.png" alt="App Icon" class="icon">
+                </div>
+                <div class="app-label">Linktree</div>
+              </div>
+            
+              <div class="app-item">
+                <div class="app-icon-circle" style="background-color: #1565C0;">
+                  <img src="./assets/App icons/linkedin.png" alt="App Icon" class="icon">
+                </div>
+                <div class="app-label">LinkedIn</div>
+              </div>
+              <div class="app-item">
+                <div class="app-icon-circle" style="background-color: #000;">
+                  <img src="./assets/App icons/github.png" alt="App Icon" class="icon">
+                </div>
+                <div class="app-label">GitHub</div>
+              </div>
+            
+              <div class="app-item">
+                <div class="app-icon-circle" style="background-color: #E91E63;">
+                  <img src="./assets/App icons/instagram.png" alt="App Icon" class="icon">
+                </div>
+                <div class="app-label">Instagram</div>
+              </div>
+              <div class="app-item">
+                <div class="app-icon-circle" style="background-color: #fff;">
+                  <img src="./assets/App icons/medium.png" alt="App Icon" class="icon">
+                </div>
+                <div class="app-label">Medium</div>
+              </div>
+            
+              <div class="app-item">
+                <div class="app-icon-circle" style="background-color: #1666F7;">
+                  <img src="./assets/App icons/behance.png" alt="App Icon" class="icon">
+                </div>
+                <div class="app-label">Behance</div>
+              </div>
+              <div class="app-item">
+                <div class="app-icon-circle" style="background-color: #E04984;">
+                  <img src="./assets/App icons/dribble.png" alt="App Icon" class="icon">
+                </div>
+                <div class="app-label">Dribble</div>
+              </div>
+
+              <!-- Color Generator Div -->
+              <div class="app-item" id="colorGeneratorApp">
+                <div class="app-icon-circle" style="background-color: #025B5A;">
+                  <img src="./assets/App icons/palette.png" alt="Color Palette Icon" class="icon">
+                </div>
+                <div class="app-label">Color Generate</div>
+              </div>
+              
+
+          </div>
+
+
+          <div class="footer-text text-center position-absolute" id="footer">
+            <span class="built-with-love">Built with <i class="fa fa-heart" style="color: red;"></i></span><br>
+            <span class="copyright">© 2024 Vaishnavi Vaishnav</span>
+          </div>
+
+
+
+
+    
+        <!-- About Me Screen (Initially Hidden) -->
+        <div class="palette-screen about-screen d-none" id="aboutMeScreen">
+            <div class="palette-header aboutheader">
+            <h3>About Me</h3>
+            <button class="close-btn" id="closeAboutMeScreen">&times;</button>
+            </div>
+            <div class="overflow-scroll">
+                <div class="text-center mt-4">
+                    <img src="./assets/Vaishnavi_Vaishnav.png" alt="Profile Icon" class="aboutprofile">
+                    <p>Vaishnavi Vaishnav</p>
+    
+                </div>
+                <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vehicula libero nec tortor cursus, a facilisis eros tempor.</p>
+                <p>Fusce euismod justo vel metus accumsan, vitae interdum ligula fringilla. Ut in ante nisl.</p>
+                <p>Aliquam erat volutpat. Ut fermentum risus in enim venenatis scelerisque.</p>
+                <p>Curabitur gravida erat eget nibh volutpat, quis vehicula nulla vehicula.</p>
+                <p>Suspendisse eget sem ac sapien fermentum tristique.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vehicula libero nec tortor cursus, a facilisis eros tempor.</p>
+                <p>Fusce euismod justo vel metus accumsan, vitae interdum ligula fringilla. Ut in ante nisl.</p>
+                <p>Aliquam erat volutpat. Ut fermentum risus in enim venenatis scelerisque.</p>
+                <p>Curabitur gravida erat eget nibh volutpat, quis vehicula nulla vehicula.</p>
+                <p>Suspendisse eget sem ac sapien fermentum tristique.</p>
+                </div>
+            </div>
+            
+        </div>
+
+
+          <!-- Palette Screen (Hidden by Default) -->
+          <div class="palette-screen d-none" id="paletteScreen">
+            <div class="palette-header">
+                <h3>Palette Generator</h3>
+                <button class="close-btn" id="closePaletteScreen">&times;</button>
+            </div>
+            <div class="palettes" id="palettesContainer"></div>
+            <button id="refreshPalette" class="position-absolute"><i class="fa fa-refresh fa-lg"></i></button>
+        </div>
+        <!-- pop-up for Notifications -->
+        <div class="toast-container position-fixed top-25 start-50 translate-middle p-3">
+            <div id="copyToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true" data-bs-delay="1500">
+                <div class="toast-header">
+                    <strong class="me-auto">Notification</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    <span class="me-2"><i class="fa fa-info-circle fa-lg" style="color: cornflowerblue;"></i></span>
+                    <span id="toastText">Color copied to clipboard!</span>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+      </div>
+     
+
+      <!-- Right Sidebar -->
+      <div class="col-2 d-flex flex-column gap-2 justify-content-between align-items-center iphone-cards">
+
+        <div class="card d-flex justify-content-center text-center p-3">
+            <div class="flip-clock" id="countdown-clock">
+                <!-- Hours -->
+                <div class="flip-clock__piece" id="hours">
+                    <b class="flip-clock__card flipcard">
+                    <b class="card__top"></b>
+                    <b class="card__bottom"></b>
+                    <b class="card__back">
+                        <b class="card__bottom"></b>
+                    </b>
+                    </b>
+                </div>
+                <!-- Minutes -->
+                <div class="flip-clock__piece" id="minutes">
+                    <b class="flip-clock__card flipcard">
+                    <b class="card__top"></b>
+                    <b class="card__bottom"></b>
+                    <b class="card__back">
+                        <b class="card__bottom"></b>
+                    </b>
+                    </b>
+                </div>
+                <!-- Seconds -->
+                <div class="flip-clock__piece" id="seconds">
+                    <b class="flip-clock__card flipcard">
+                    <b class="card__top"></b>
+                    <b class="card__bottom"></b>
+                    <b class="card__back">
+                        <b class="card__bottom"></b>
+                    </b>
+                    </b>
+                </div>
+                </div>
+            <div class="currentdate" id="currentdate">
+              <span>Current date</span>
+            </div>
+          </div>
+          
+
+        <div class="card d-flex justify-content-center text-center p-3">
+         
+          <div class="d-flex justify-content-evenly">
+            <button class="theme btn btn-sm" data-color="linear-gradient(#4C7878, #304E4E, black)" style="background-color:#4C7878;"></button>
+            <button class="theme btn btn-sm" data-color="linear-gradient(#D6AF6F, #352815, black)" style="background-color: #D6AF6F;"></button>
+            <button class="theme btn btn-sm" data-color="linear-gradient(#597696, #1C2737, black)" style="background-color: #597696;"></button>
+         </div>
+          <div class="d-flex justify-content-evenly">
+            <button class="theme btn btn-sm" data-color="linear-gradient(#CD6B63, #3B1B1C, black)" style="background-color: #CD6B63;"></button>
+            <button class="theme btn btn-sm" data-color="linear-gradient(#4C8A4A, #1F2E26, black)" style="background-color:#4C8A4A;"></button>
+            <button class="theme btn btn-sm" data-color="linear-gradient(#806E92,#322B3F , black)" style="background-color:#806E92;"></button>
+          </div>
+        </div>
+        <div class="card text-center p-3" id="darkModeToggle">Toggle Mode</div>
+        <div class="card text-center p-3">Extra</div>
+      </div>
+
+        <div class="col-1 d-flex flex-column gap-3 align-items-center">
+            <div class="top-bar">
+                <img src="./assets/Vaishnavi_Vaishnav.png" alt="Profile Icon" class="profile-icon">
+              </div>
+        </div>
+    </div>
+    <!-- Bottom Navigation for Device Switch -->
+  <div class="device-switch d-flex justify-content-around gap-4 w-100">
+    <img src="./assets/AndroidLogo.png" id="android" alt="android" class="phonetype android d-none">
+    <img src="./assets/applelogo.png" id="iphone" alt="iphone" class="phonetype apple">
+    <img src="./assets/tabletlogo.webp" id="tablet" alt="tablet" class="phonetype tablet d-none">
+    <!-- <button class="btn btn-outline-primary" id="android">Android</button>
+    <button class="btn btn-outline-primary" id="iphone">iPhone</button>
+    <button class="btn btn-outline-primary" id="tablet">Tablet</button> -->
+  </div>
+
+
+  </div>
+
+  
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./script.js"></script>
+  <script src="./flip-clock.js"></script>
+  <script src="./about.js"></script>
+
+</body>
+</html>

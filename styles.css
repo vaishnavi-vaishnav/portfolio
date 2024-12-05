@@ -1,0 +1,436 @@
+/* styles.css */
+    html, body {
+        margin: 0;
+        height: 100vh; 
+        width: 100vw; 
+        padding: 0;
+        /* max-height: 100vh; */
+        overflow: hidden; /* Prevent scrolling */
+        background-image: linear-gradient(#4C7878, #304E4E, black);
+        font-family: 'Ubuntu', sans-serif;
+        user-select: none;
+        color: #fff;
+    }
+
+    body {
+        transform: scale(1); /* Prevents zooming */
+        transform-origin: top left; /* Ensure scaling starts from the top-left corner */
+      }
+
+    * {
+        box-sizing: border-box;  /* Make sure padding and borders don't affect element size */
+      }
+      
+  
+  /* Apply a lighter color to the left and right sidebar cards */
+  .iphone-cards .card{
+    background-color: #385A5A;
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+
+  }
+  .iphone-cards .card, .theme{
+    border-radius: 10px;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+  }
+  .profile-icon{
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+  .hiremebtn{
+    padding: 5px 20px;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+  }
+
+  .profile-icon, .hiremebtn {
+    background-color: #497273;
+    backdrop-filter: blur(10px);
+    border-radius: 4px;
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+    position: absolute;
+    background-size: cover;
+    cursor: pointer;
+  }
+
+  .top-bar{
+    padding: 30px 0;;
+  }
+  
+  /* Styling for color buttons */
+  .theme {
+    width: 55px;
+    height: 55px;
+    border-radius: 30%;
+    /* border: 2px solid white; */
+    margin-bottom: 5px;
+  }
+
+  body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  /* Main Container */
+  .main-container {
+    /* width: 100%;
+    height: 100vh;
+    display: flex; */
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+  }
+  
+  /* Card Styling */
+  .card {
+    height: 100%;
+    width: 100%;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  }
+  
+  /* iPhone Container Styling */
+  .iphone-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.5s ease-in-out;
+  }
+  
+  /* Phone Image Styling */
+  .iphone {
+    border-radius: 35px;
+    transition: background 0.3s ease;
+    width: 100%;
+    max-width: 350px; /* Set the max width for the phone */
+    height: auto;
+    background: linear-gradient(#4C7878, #304E4E, black);
+  }
+
+
+  /* General styling for the app grid */
+   .app-grid {
+    top: 10%;
+    width: 78%;
+    max-width: 350px;
+    display: grid;
+    gap: 25px;
+   
+  }
+  
+  /* Hidden state */
+  .d-none {
+    display: none !important;
+  }
+  
+  /* Dynamic grid layout for different screen sizes */
+  .iphone .app-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for iPhone */
+  }
+  
+  .android .app-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for Android */
+  }
+  
+  .tablet .app-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for Tablet */
+  }
+  
+/* Layout for Individual App Items */
+.app-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Circle around the Icon */
+  .app-icon-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+  }
+  
+  /* App Icon */
+  .icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+  
+  /* App Label Text */
+  .app-label {
+    margin-top: 5px;
+    font-size: 10px;
+    color: #fff;
+    font-weight: 400;
+  }
+  
+  .device-switch {
+    position: absolute;
+    bottom: 15px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .phonetype{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+  }
+
+
+/* Footer style */
+.footer-text {
+    text-align: center;
+    font-size: 0.7rem;
+    color: #fff;
+    margin-top: 20px;
+    padding: 10px;
+    position: fixed;
+    bottom: 20px;
+    width: 80%;
+  }
+
+  .welcome{
+    top: 5%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 1px 1px 2px black,0 0 5px darkblue;
+    margin-top: 1em;
+    padding: 10px;
+  }
+
+  .toast-body{
+    color: #333;
+  }
+
+
+  /* ABOUT ME */
+
+  .about-screen .content {
+    padding: 1rem;
+  }
+
+  .about-screen p{
+    font-size: 14px;
+    color: #333;
+  }
+  .aboutheader{
+    position: sticky;
+  }
+  .aboutprofile{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  
+
+  
+  
+  /* Responsive scaling */
+  @media (max-width: 768px) {
+    .iphone-container {
+      width: 250px;
+      height: 500px;
+    }
+  
+    .app-grid {
+      top: 20%;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .screen {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+
+
+  /* --------- Color Generator Specific Styles -------- */
+
+/* Palette Generator Screen */
+.palette-screen {
+    /* position: relative; */
+    position: absolute;
+    /* top: 0; */
+    /* left: 0; */
+    width: 90%;
+    max-width: 310px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0px;
+    border-radius: 30px;
+    z-index:0; /* Ensure it overlays the app grid */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Hidden state for Palette Screen */
+  .palette-screen.d-none {
+    display: none;
+  }
+  
+  /* Palette Header */
+  .palette-header {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    width: 100%;
+    padding: 40px 20px 5px 20px;
+    border-radius: 30px 30px 0 0;
+    /* background-color: #497273; */
+    color: black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid black;
+  }
+  
+  .palette-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .close-btn {
+    font-size: 1.2rem;
+    padding: 0px;
+    color: black;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .close-btn:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Palettes Container */
+  .palettes {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 10px; */
+    margin: 0;
+  }
+  
+  .palettes .palette {
+    display: flex;
+    width: 100%;
+    /* height: 24%; */
+    padding: 0px 20px;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* transition: transform 0.2s ease, box-shadow 0.3s ease; */
+  }
+
+  
+  .palettes .palette:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .palettes > .palette:last-child {
+    border-radius: 0 0 30px 30px;
+  }
+
+  /* Text Container (Left) */
+.palette .palette-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+/* HEX Code */
+.palette .palette-text .hex-code {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* RGB Code */
+.palette .palette-text .rgb-code {
+    font-size: 0.9rem;
+    margin: 3px 0 0 0;
+    color: white;
+}
+
+/* Copy Icon Container (Right) */
+.palette .palette-copy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.palette .palette-copy i {
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.palette .palette-copy i:hover {
+    /* color: #555; */
+    transform: scale(1.1);
+}
+
+/* Hover Effect for Palette */
+.palette:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+  
+  /* Refresh Button */
+  #refreshPalette {
+    padding: 13px 15px;
+    font-size: 0.9rem;
+    background-color: #eaeaea;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 15px; /* Rounded corners for a neumorphic effect */
+    background: rgba(255, 255, 255, 0.6); /* Semi-transparent background */
+    /* box-shadow: 
+        4px 4px 10px rgba(0, 0, 0, 0.2),
+        -4px -4px 10px rgba(255, 255, 255, 0.8); */
+    backdrop-filter: blur(5px); /* Blur effect */
+    cursor: pointer;
+    /* transition: transform 0.2s ease, box-shadow 0.3s ease; */
+    bottom: 20px;
+    right: 25px;
+  }
+  
+  #refreshPalette:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  #refreshPalette:active {
+    transform: scale(1.1);
+  }
+  
+  /* App Grid (Hidden When Palette Screen is Active) */
+  .app-grid.d-none {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
